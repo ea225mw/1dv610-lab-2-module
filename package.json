@@ -1,0 +1,23 @@
+{
+  "name": "1dv610-lab-2-module",
+  "version": "0.0.1",
+  "description": "Words-Works - Laboration 2 in 1DV610 course, Linneus University, Sweden",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ea225mw/1dv610-lab-2-module"
+  },
+  "author": "Emanuel Andersen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ea225mw/1dv610-lab-2-module/issues"
+  },
+  "homepage": "https://github.com/ea225mw/1dv610-lab-2-module#readme",
+  "devDependencies": {
+    "jest": "^30.1.3"
+  }
+}
