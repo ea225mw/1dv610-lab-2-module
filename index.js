@@ -1,4 +1,5 @@
-import { str1, str2 } from "./testStrings.js"
+import { testStr1, testStr2 } from "./testStrings.js"
+const object = { name: 'Emanuel' }
 
 /**
  * Finds the longest word(s) in a string.
@@ -7,14 +8,19 @@ import { str1, str2 } from "./testStrings.js"
  */
 function findLongestWord(string) {
   if (typeof string !== 'string') {
-    // Handle exception
+    console.log('Not a string!');
+    return
   }
 
   const cleanedString = removeNonLetters(string)
   const splittedArray = splitOnWhitespace(cleanedString)
   const sortedArray = sortDescending(splittedArray)
+  const onlyLongestWordsArray = sortedArray.filter((element) => element.length === sortedArray[0].length)
 
-  return sortedArray.filter((element) => element.length === sortedArray[0].length)
+  const onlyUniqueWords = new Set
+  onlyLongestWordsArray.forEach((element) => onlyUniqueWords.add(element))
+
+  return { numberOfLetters: onlyLongestWordsArray[0].length, words: Array.from(onlyUniqueWords) }
 }
 
 function removeNonLetters(string) {
@@ -24,7 +30,7 @@ function removeNonLetters(string) {
 }
 
 /**
- * Splits a string on whitespaces and returns an array of words sorted on length.
+ * Splits a string on whitespaces and returns an array of words.
  * @param {string} string - The string to be handled.
  */
 function splitOnWhitespace(string) {
@@ -43,6 +49,5 @@ function sortDescending(array) {
   return array
 }
 
-
-
-console.table(findLongestWord(str2))
+const test = findLongestWord(testStr2)
+console.log(test);
