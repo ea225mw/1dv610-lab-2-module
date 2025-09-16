@@ -51,3 +51,5 @@ function sortDescending(array) {
 
 const test = findLongestWord(testStr2)
 console.log(test);
+
+export { splitOnWhitespace }
