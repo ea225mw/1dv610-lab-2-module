@@ -7,23 +7,22 @@ const object = { name: 'Emanuel' }
  * @param {string} string  - The string in which to find the longest word.
  */
 function findLongestWord(string) {
-  if (typeof string !== 'string') {
-    console.log('Not a string!');
-    return
-  }
+  validateInput(string)
 
   const cleanedString = removeNonLetters(string)
-  const splittedArray = splitOnWhitespace(cleanedString)
-  console.log(splittedArray);
-  const sortedArray = sortDescending(splittedArray)
+  const splittedStringArray = splitOnWhitespace(cleanedString)
+  const sortedArray = sortDescending(splittedStringArray)
   deleteEmptyElements(sortedArray)
+  const onlyLongestWordsArray = removeAllWordsExceptLongest(sortedArray)
+  const onlyUniqueWords = createArrayWithUniqueLongestWords(onlyLongestWordsArray)
 
-  const onlyLongestWordsArray = sortedArray.filter((element) => element.length === sortedArray[0].length)
+  return createReturnObject(onlyUniqueWords)
+}
 
-  const onlyUniqueWords = new Set
-  onlyLongestWordsArray.forEach((element) => onlyUniqueWords.add(element.toLowerCase()))
-
-  return { numberOfLetters: onlyLongestWordsArray[0].length, words: Array.from(onlyUniqueWords) }
+function validateInput(input) {
+  if (typeof input !== 'string') {
+    throw new Error('Input must be a string.')
+  }
 }
 
 function removeNonLetters(string) {
@@ -32,11 +31,6 @@ function removeNonLetters(string) {
   return string.replaceAll(regExp, ' ')
 }
 
-/**
- * Splits a string on whitespaces and returns an array of words.
- * 
- * @param {string} string - The string to be handled.
- */
 function splitOnWhitespace(string) {
   return string.trim().split(/\s+/)
 }
@@ -50,7 +44,21 @@ function deleteEmptyElements(array) {
   return array.filter((element) => element.length > 0)
 }
 
-const test = findLongestWord(testStr4)
+function removeAllWordsExceptLongest(array) {
+  return array.filter((element) => element.length === array[0].length)
+}
+
+function createArrayWithUniqueLongestWords(array) {
+  const set = new Set
+  array.forEach((element) => set.add(element.toLowerCase()))
+  return Array.from(set)
+}
+
+function createReturnObject(set) {
+  return { numberOfLetters: set[0].length, words: Array.from(set) }
+}
+
+const test = findLongestWord(testStr3)
 console.log(test);
 
-export { splitOnWhitespace, findLongestWord, sortDescending, deleteEmptyElements }
+export { validateInput, splitOnWhitespace, findLongestWord, sortDescending, deleteEmptyElements, createArrayWithUniqueLongestWords }
