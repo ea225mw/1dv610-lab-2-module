@@ -24,7 +24,7 @@ export class LongestWordFinder {
 
     const cleanedString = this.#removeNonLetters(string)
     const splittedStringArray = this.#helper.splitOnWhitespace(cleanedString)
-    const sortedArray = this.#helper.sortArrayDescending(splittedStringArray)
+    const sortedArray = this.#sortArrayDescending(splittedStringArray)
     this.#deleteEmptyElements(sortedArray)
     const onlyLongestWordsArray = this.#removeAllWordsExceptLongest(sortedArray)
     const onlyUniqueWords = this.#createArrayWithUniqueLongestWords(onlyLongestWordsArray)
@@ -36,6 +36,10 @@ export class LongestWordFinder {
     const regExp = /[\.,:;!\?\/\-\–\*\+"”`'\(\)\[\]\{\}#0123456789]/g
 
     return string.replaceAll(regExp, ' ')
+  }
+
+  #sortArrayDescending(array) {
+    return array.sort((a, b) => b.length - a.length)
   }
 
   #deleteEmptyElements(array) {

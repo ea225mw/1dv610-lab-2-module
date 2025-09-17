@@ -1,16 +1,8 @@
-// import { validateInput, splitOnWhitespace, findLongestWord, sortDescending, deleteEmptyElements, createArrayWithUniqueLongestWords } from '../src/index.js'
 import { testStr1, testStr2, testStr3 } from './testStrings.js'
-// import { testArray1, testArray2, duplicatedWordsArray } from './testArrays.js'
 
 import { LongestWordFinder } from '../src/LongestWordFinder.js'
 
 const lwf = new LongestWordFinder
-
-// test('split on whitespaces', () => {
-//   expect(
-//     splitOnWhitespace('Functions should do one thing')
-//   ).toStrictEqual(['Functions', 'should', 'do', 'one', 'thing'])
-// })
 
 test('find longest word in test strings', () => {
   expect(
@@ -32,6 +24,7 @@ test('find longest word in test strings', () => {
     words: ['implementation']
   })
 })
+
 /*
 test('sorting an array descending', () => {
   expect(
@@ -59,12 +52,4 @@ test('remove identical elements in array', () => {
   ).toEqual(['functions', 'should', 'either', 'do', 'something', 'or', 'answer', 'but', 'not', 'both'])
 })
 
-test('recieve an error message when input is wrong type', () => {
-  expect(() => validateInput(42)).toThrow('Input must be a string.')
-  expect(() => validateInput(null)).toThrow('Input must be a string.')
-  expect(() => validateInput(['string'])).toThrow('Input must be a string.')
-})
-
-test('does not throw error if input is a string', () => {
-  expect(() => validateInput('Hello there!')).not.toThrow()
-})*/
+*/

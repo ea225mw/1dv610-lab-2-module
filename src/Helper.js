@@ -8,8 +8,4 @@ export class Helper {
   splitOnWhitespace(string) {
     return string.trim().split(/\s+/)
   }
-
-  sortArrayDescending(array) {
-    return array.sort((a, b) => b.length - a.length)
-  }
 }
