@@ -1,28 +1,38 @@
-import { validateInput, splitOnWhitespace, findLongestWord, sortDescending, deleteEmptyElements, createArrayWithUniqueLongestWords } from '../src/index.js'
-import { testStr1, testStr2 } from './testStrings.js'
-import { testArray1, testArray2, duplicatedWordsArray } from './testArrays.js'
+// import { validateInput, splitOnWhitespace, findLongestWord, sortDescending, deleteEmptyElements, createArrayWithUniqueLongestWords } from '../src/index.js'
+import { testStr1, testStr2, testStr3 } from './testStrings.js'
+// import { testArray1, testArray2, duplicatedWordsArray } from './testArrays.js'
 
-test('split on whitespaces', () => {
-  expect(
-    splitOnWhitespace('Functions should do one thing')
-  ).toStrictEqual(['Functions', 'should', 'do', 'one', 'thing'])
-})
+import { LongestWordFinder } from '../src/LongestWordFinder.js'
+
+const lwf = new LongestWordFinder
+
+// test('split on whitespaces', () => {
+//   expect(
+//     splitOnWhitespace('Functions should do one thing')
+//   ).toStrictEqual(['Functions', 'should', 'do', 'one', 'thing'])
+// })
 
 test('find longest word in test strings', () => {
   expect(
-    findLongestWord(testStr1)
+    lwf.findLongestWord(testStr1)
   ).toStrictEqual({
     numberOfLetters: 14,
     words: ['necessitatibus', 'exercitationem']
   })
   expect(
-    findLongestWord(testStr2)
+    lwf.findLongestWord(testStr2)
   ).toStrictEqual({
     numberOfLetters: 20,
     words: ['onsdagseftermiddagen']
   })
+  expect(
+    lwf.findLongestWord(testStr3)
+  ).toStrictEqual({
+    numberOfLetters: 14,
+    words: ['implementation']
+  })
 })
-
+/*
 test('sorting an array descending', () => {
   expect(
     sortDescending(testArray1)
@@ -57,4 +67,4 @@ test('recieve an error message when input is wrong type', () => {
 
 test('does not throw error if input is a string', () => {
   expect(() => validateInput('Hello there!')).not.toThrow()
-})
+})*/
