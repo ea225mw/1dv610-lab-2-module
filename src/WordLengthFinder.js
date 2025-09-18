@@ -7,7 +7,7 @@ import { Helper } from "./Helper.js"
 /**
  * Represents a word finder that finds the longest word in a text/string.
  */
-export class LongestWordFinder {
+export class WordLengthFinder {
   #helper
 
   constructor() {
@@ -20,16 +20,31 @@ export class LongestWordFinder {
    * @param {string} string  - The string in which to find the longest word.
    */
   findLongestWord(string) {
-    this.#helper.validateInput(string)
+    const arrayOfPreparedWords = this.#prepareString(string)
 
-    const cleanedString = this.#removeNonLetters(string)
-    const splittedStringArray = this.#helper.splitOnWhitespace(cleanedString)
-    const sortedArray = this.#sortArrayDescending(splittedStringArray)
+    const sortedArray = this.#sortArrayDescending(arrayOfPreparedWords)
     this.#deleteEmptyElements(sortedArray)
-    const onlyLongestWordsArray = this.#removeAllWordsExceptLongest(sortedArray)
-    const onlyUniqueWords = this.#createArrayWithUniqueLongestWords(onlyLongestWordsArray)
+    const onlyLongestWordsArray = this.#keepOnlyUsefulWords(sortedArray)
+    const onlyUniqueWords = this.#createArrayWithUniqueUsefulWords(onlyLongestWordsArray)
 
     return this.#createReturnObject(onlyUniqueWords)
+  }
+
+  findShortestWord(string) {
+    const arrayOfPreparedWords = this.#prepareString(string)
+
+    const sortedArray = this.#sortArrayAscending(arrayOfPreparedWords)
+    this.#deleteEmptyElements(sortedArray)
+    const onlyShortestWordsArray = this.#keepOnlyUsefulWords(sortedArray)
+    const onlyUniqueWords = this.#createArrayWithUniqueUsefulWords(onlyShortestWordsArray)
+
+    return this.#createReturnObject(onlyUniqueWords)
+  }
+
+  #prepareString(string) {
+    this.#helper.validateInput(string)
+    const cleanedString = this.#removeNonLetters(string)
+    return this.#helper.splitOnWhitespace(cleanedString)
   }
 
   #removeNonLetters(string) {
@@ -42,15 +57,19 @@ export class LongestWordFinder {
     return array.sort((a, b) => b.length - a.length)
   }
 
+  #sortArrayAscending(array) {
+    return array.sort((a, b) => a.length - b.length)
+  }
+
   #deleteEmptyElements(array) {
     return array.filter((element) => element.length > 0)
   }
 
-  #removeAllWordsExceptLongest(array) {
+  #keepOnlyUsefulWords(array) {
     return array.filter((element) => element.length === array[0].length)
   }
 
-  #createArrayWithUniqueLongestWords(array) {
+  #createArrayWithUniqueUsefulWords(array) {
     const set = new Set
     array.forEach((element) => set.add(element.toLowerCase()))
     return Array.from(set)
