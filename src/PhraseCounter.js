@@ -7,19 +7,19 @@ export class PhraseCounter {
     this.#helper = new Helper
   }
 
-  countSpecifiedPhrase(string, char) {
+  countSpecifiedPhrase(string, phrase) {
     this.#helper.validateInput(string)
-    this.#checkCharArgument(char)
-    return this.#findSpecifiedPhrase(string, char)
+    this.#checkCharArgument(phrase)
+    return this.#findSpecifiedPhrase(string, phrase)
   }
 
-  #checkCharArgument(char) {
-    if (typeof char !== 'string') throw new Error('Second argument must be a string.')
+  #checkCharArgument(phrase) {
+    if (typeof phrase !== 'string') throw new Error('Second argument must be a string.')
     // if (char.length !== 1) throw new Error('Only one character is allowed as second argument.')
   }
 
-  #findSpecifiedPhrase(string, char) {
-    const regExp = new RegExp(char, 'g')
+  #findSpecifiedPhrase(string, phrase) {
+    const regExp = new RegExp(phrase, 'g')
     const array = [...string.matchAll(regExp)]
     return array.length
   }

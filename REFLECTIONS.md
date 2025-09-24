@@ -11,4 +11,5 @@ Väldigt mycket vägande fram och tillbaka. Vad blir mest lättförståeligt - d
 
 Jag bryter mot bokens regel kring att inte ha med typbeskrivningar i variabelnamn. Exempelvis i namn som splittedWordsArray. I löst typade språk som JavaScript tycker jag att det underlättar att ibland skriva ut variablers typer i namnet så som i exemplet ovan. Annars behöver man veta att String.prototype.split() returnerar en array. Då tycker jag att förståelsen ökar genom att skriva ut typen i namnet.
 
+Bytte namn på argument i PhraseCounter från char till phrase eftersom jag gjorde om funktionen till att kunna hantera både ett tecken och en hel fras bestående av många tecken.
 

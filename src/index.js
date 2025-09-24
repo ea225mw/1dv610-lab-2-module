@@ -10,8 +10,8 @@ const ws = new WordSorter
 const st = new StringTransformer
 const pc = new PhraseCounter
 
-console.log(wlf.findLongestWord(testStr4))
+// console.log(wlf.findLongestWord(testStr4))
 // console.log(ws.sortWordsDescending(testStr5))
 // console.log(st.firstLetterCapital(testStr4));
-// console.log(pc.countSpecifiedPhrase(testStr2, 'vatten'))
+console.log(pc.countSpecifiedPhrase(testStr3, 'n'))
 
