@@ -1,24 +1,23 @@
 import { testStr1, testStr2, testStr3 } from './testStrings.js'
 
-import { LongestWordFinder } from '../src/LongestWordFinder.js'
-
-const lwf = new LongestWordFinder
+import { WordLengthFinder } from '../src/WordLengthFinder.js'
+const wlf = new WordLengthFinder
 
 test('find longest word in test strings', () => {
   expect(
-    lwf.findLongestWord(testStr1)
+    wlf.findLongestWord(testStr1)
   ).toStrictEqual({
     numberOfLetters: 14,
     words: ['necessitatibus', 'exercitationem']
   })
   expect(
-    lwf.findLongestWord(testStr2)
+    wlf.findLongestWord(testStr2)
   ).toStrictEqual({
     numberOfLetters: 20,
     words: ['onsdagseftermiddagen']
   })
   expect(
-    lwf.findLongestWord(testStr3)
+    wlf.findLongestWord(testStr3)
   ).toStrictEqual({
     numberOfLetters: 14,
     words: ['implementation']

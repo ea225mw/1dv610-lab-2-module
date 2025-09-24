@@ -17,7 +17,7 @@ export class WordLengthFinder {
   /**
    * Finds the longest word(s) in a string.
    * 
-   * @param {string} string  - The string in which to find the longest word.
+   * @param {string} string - The string in which to find the longest word.
    */
   findLongestWord(string) {
     const arrayOfPreparedWords = this.#prepareString(string)
@@ -30,6 +30,12 @@ export class WordLengthFinder {
     return this.#createReturnObject(onlyUniqueWords)
   }
 
+  /**
+   * Finds the shortest word(s) in a string.
+   * 
+   * @param {string} string  - The string in which to find the shortest word.
+   * @returns 
+   */
   findShortestWord(string) {
     const arrayOfPreparedWords = this.#prepareString(string)
 
@@ -79,5 +85,3 @@ export class WordLengthFinder {
     return { numberOfLetters: set[0].length, words: Array.from(set) }
   }
 }
-
-// export { validateInput, splitOnWhitespace, findLongestWord, sortDescending, deleteEmptyElements, createArrayWithUniqueLongestWords }
