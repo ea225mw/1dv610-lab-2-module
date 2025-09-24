@@ -15,7 +15,6 @@ export class PhraseCounter {
 
   #checkCharArgument(phrase) {
     if (typeof phrase !== 'string') throw new Error('Second argument must be a string.')
-    // if (char.length !== 1) throw new Error('Only one character is allowed as second argument.')
   }
 
   #findSpecifiedPhrase(string, phrase) {

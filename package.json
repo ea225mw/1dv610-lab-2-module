@@ -1,6 +1,6 @@
 {
   "name": "1dv610-lab-2-module",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Words-Works - Laboration 2 in 1DV610 course, Linneus University, Sweden",
   "type": "module",
   "main": "index.js",

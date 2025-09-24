@@ -13,3 +13,22 @@ Jag bryter mot bokens regel kring att inte ha med typbeskrivningar i variabelnam
 
 Bytte namn på argument i PhraseCounter från char till phrase eftersom jag gjorde om funktionen till att kunna hantera både ett tecken och en hel fras bestående av många tecken.
 
+Jag tänker mer aktivt på vad olika variabler heter efter ha läst boken och tittat på föreläsningar.
+sortedLetters --> countedLetters --> countedCharacters
+
+### Kommentarer
+Jag jobbade en del med att i klartext skriva vad jag skulle koda.
+
+  ```javascript
+  mostCommonLetter(string) {
+    /*
+    - Kolla så att param är en sträng.
+    - Gå igenom varje tecken i strängen och lägg dem (eller deras teckenkod?) i array1.
+    - Skapa ett tomt objekt som ska innehålla keys med tecken
+    - Gå igenom array1 och om bokstaven på indexet INTE finns som key, lägg till den som key och sätt värdet till 1
+    -   Om key redan finns --> key++
+    - Sortera objektet efter storlek på värdena
+    - Returnera det eller de nyckel/värdepar med högst värde
+    */
+  }
+  ```
