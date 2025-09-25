@@ -16,6 +16,6 @@ const mclf = new MostCommonLetterFinder
 // console.log(ws.sortWordsDescending(testStr5))
 // console.log(st.firstLetterCapital(testStr4));
 // console.log(pc.countSpecifiedPhrase(testStr3, 'n'))
-console.log(mclf.mostCommonLetter('aaabbb'))
+// console.log(mclf.mostCommonLetter('aaabbb'))
 console.log(mclf.mostCommonLetter(testStr5))
 

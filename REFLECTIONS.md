@@ -32,3 +32,8 @@ Jag jobbade en del med att i klartext skriva vad jag skulle koda.
     */
   }
   ```
+
+
+  ### Kladd
+
+  Göra instanssvariabler i klasserna för att slippa skicka med argument i MostCommonLetterFinder.

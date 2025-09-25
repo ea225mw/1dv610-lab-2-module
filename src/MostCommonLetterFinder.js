@@ -5,56 +5,54 @@ const obj = { 'a': 1 }
 export class MostCommonLetterFinder {
   #helper
   #regExp = /[^\p{L}]+/gu // The negation of all characters that are considered letters by Unicode.
+  #countedLetters = {}
+  #amountOfMostCommonLetter = 0
+  #mostCommonLetter = []
 
   constructor() {
     this.#helper = new Helper
   }
 
   mostCommonLetter(string) {
-    /*
-    - Kolla så att param är en sträng.
-    - Gå igenom varje tecken i strängen och lägg dem (eller deras teckenkod?) i array1.
-    - Skapa ett tomt objekt som ska innehålla keys med tecken
-    - Gå igenom array1 och om bokstaven på indexet INTE finns som key, lägg till den som key och sätt värdet till 1
-    -   Om key redan finns --> key++
-    - Sortera objektet efter storlek på värdena
-    - Returnera det eller de nyckel/värdepar med högst värde
-    */
     this.#helper.validateInput(string)
 
-    let countedLetters = {}
+    this.#countEveryLetter(string)
+    this.#findAmountOfMostCommonLetter()
+    this.#filterOutMostCommonLetter()
 
+    return this.#mostCommonLetter
+  }
+
+  #countEveryLetter(string) {
     for (let i = 0; i < string.length; i++) {
       let letter = string.charAt(i).toLowerCase()
       if (letter.match(this.#regExp)) {
         continue
       }
-      if (countedLetters[letter]) {
-        countedLetters[letter]++
+      if (this.#countedLetters[letter]) {
+        this.#countedLetters[letter]++
       } else {
-        countedLetters[letter] = 1
+        this.#countedLetters[letter] = 1
       }
     }
+  }
 
-    let amountOfMostCommonLetter = 0
-
-    for (const letter in countedLetters) {
-      if (countedLetters[letter] > amountOfMostCommonLetter) {
-        amountOfMostCommonLetter = countedLetters[letter]
+  #findAmountOfMostCommonLetter() {
+    for (const letter in this.#countedLetters) {
+      if (this.#countedLetters[letter] > this.#amountOfMostCommonLetter) {
+        this.#amountOfMostCommonLetter = this.#countedLetters[letter]
       }
     }
+  }
 
-    let mostCommonLetter = []
-
-    for (const key in countedLetters) {
-      if (countedLetters[key] === amountOfMostCommonLetter) {
+  #filterOutMostCommonLetter() {
+    for (const key in this.#countedLetters) {
+      if (this.#countedLetters[key] === this.#amountOfMostCommonLetter) {
         const object = {
-          [key]: countedLetters[key]
+          [key]: this.#countedLetters[key]
         }
-        mostCommonLetter.push(object)
+        this.#mostCommonLetter.push(object)
       }
     }
-
-    return mostCommonLetter
   }
 }
