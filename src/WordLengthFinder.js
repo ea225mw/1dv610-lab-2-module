@@ -55,7 +55,6 @@ export class WordLengthFinder {
 
   #removeNonLetters(string) {
     const regExp = /[\.,:;!\?\/\-\–\*\+"”`'\(\)\[\]\{\}#0123456789]/g
-
     return string.replaceAll(regExp, ' ')
   }
 

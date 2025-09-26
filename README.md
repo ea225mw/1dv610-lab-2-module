@@ -13,7 +13,7 @@ The intended use of the module is for digging out statistics from and modify a t
 
 `import word-works from 'word-works'`
 
-#### Code examples
+#### Code example 1
 
 ```javascript
 const ww = word-works
@@ -26,4 +26,8 @@ Expected output:
 { numberOfLetters: 10, words: [ 'correspond' ] }
 ```
 
+
+## Module Manual
+
+To see all available methods and how to use them, take a look at [The Manual](manual.md).
 

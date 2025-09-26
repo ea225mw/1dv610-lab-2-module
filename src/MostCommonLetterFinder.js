@@ -8,6 +8,7 @@ export class MostCommonLetterFinder {
   #countedLetters = {}
   #amountOfMostCommonLetter = 0
   #mostCommonLetter = []
+  #caseSensitivity = false
 
   constructor() {
     this.#helper = new Helper
@@ -15,25 +16,60 @@ export class MostCommonLetterFinder {
 
   mostCommonLetter(string) {
     this.#helper.validateInput(string)
+    this.#resetPrivateFields()
 
-    this.#countEveryLetter(string)
+    this.#countEachLetter(string)
     this.#findAmountOfMostCommonLetter()
     this.#filterOutMostCommonLetter()
 
     return this.#mostCommonLetter
   }
 
-  #countEveryLetter(string) {
+  mostCommonLetterCS(string) {
+    this.#helper.validateInput(string)
+    this.#resetPrivateFields()
+    this.#caseSensitivity = true
+
+    this.#countEachLetter(string)
+    this.#findAmountOfMostCommonLetter()
+    this.#filterOutMostCommonLetter()
+
+    return this.#mostCommonLetter
+  }
+
+  #resetPrivateFields() {
+    this.#mostCommonLetter = []
+    this.#amountOfMostCommonLetter = 0
+    this.#countedLetters = {}
+    this.#caseSensitivity = false
+  }
+
+  #countEachLetter(string) {
     for (let i = 0; i < string.length; i++) {
-      let letter = string.charAt(i).toLowerCase()
+      let letter = string.charAt(i)
+      letter = this.#determineCase(letter)
+
       if (letter.match(this.#regExp)) {
         continue
-      }
-      if (this.#countedLetters[letter]) {
-        this.#countedLetters[letter]++
       } else {
-        this.#countedLetters[letter] = 1
+        this.#addToCountedLetters(letter)
       }
+    }
+  }
+
+  #determineCase(letter) {
+    if (this.#caseSensitivity) {
+      return letter
+    } else {
+      return letter.toLowerCase()
+    }
+  }
+
+  #addToCountedLetters(letter) {
+    if (this.#countedLetters[letter]) {
+      this.#countedLetters[letter]++
+    } else {
+      this.#countedLetters[letter] = 1
     }
   }
 

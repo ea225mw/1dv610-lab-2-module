@@ -7,6 +7,10 @@ Testningen har skett främst med manuella tester av enheter och komponenter men 
 ### Skiss-anteckningar
 Väldigt mycket vägande fram och tillbaka. Vad blir mest lättförståeligt - de korta utbrutna funktionerna eller en lite större sammanhängande? T ex fallet .map()
 
+Göra instanssvariabler i klasserna för att slippa skicka med argument i MostCommonLetterFinder. Gör att jag slapp en del argument in till funktioner men skapar samtidigt lite med svårläst kod ioma jag behöver ha med `this` överallt där variabeln används.
+
+Min strategi för versionsnumrering fungerade inget vidare. Den gick ut på att inför varje commit ändra versionsnumret i package.json och börja varje commit-meddelande med v0.0.X. Detta var väldigt lätt att glömma av och
+
 ### Namngivning
 
 Jag bryter mot bokens regel kring att inte ha med typbeskrivningar i variabelnamn. Exempelvis i namn som splittedWordsArray. I löst typade språk som JavaScript tycker jag att det underlättar att ibland skriva ut variablers typer i namnet så som i exemplet ovan. Annars behöver man veta att String.prototype.split() returnerar en array. Då tycker jag att förståelsen ökar genom att skriva ut typen i namnet.
@@ -32,8 +36,3 @@ Jag jobbade en del med att i klartext skriva vad jag skulle koda.
     */
   }
   ```
-
-
-  ### Kladd
-
-  Göra instanssvariabler i klasserna för att slippa skicka med argument i MostCommonLetterFinder.
