@@ -2,44 +2,44 @@ import { Helper } from "./Helper.js"
 
 const obj = { 'a': 1 }
 
-export class MostCommonLetterFinder {
+export class MostFrequentLetterFinder {
   #helper
   #regExp = /[^\p{L}]+/gu // The negation of all characters that are considered letters by Unicode.
   #countedLetters = {}
-  #amountOfMostCommonLetter = 0
-  #mostCommonLetter = []
+  #amountOfMostFrequentLetter = 0
+  #mostFrequentLetter = []
   #caseSensitivity = false
 
   constructor() {
     this.#helper = new Helper
   }
 
-  mostCommonLetter(string) {
+  mostFrequentLetter(string) {
     this.#helper.validateInput(string)
     this.#resetPrivateFields()
 
     this.#countEachLetter(string)
-    this.#findAmountOfMostCommonLetter()
-    this.#filterOutMostCommonLetter()
+    this.#findAmountOfMostFrequentLetter()
+    this.#filterOutMostFrequentLetter()
 
-    return this.#mostCommonLetter
+    return this.#mostFrequentLetter
   }
 
-  mostCommonLetterCS(string) {
+  mostFrequentLetterCS(string) {
     this.#helper.validateInput(string)
     this.#resetPrivateFields()
     this.#caseSensitivity = true
 
     this.#countEachLetter(string)
-    this.#findAmountOfMostCommonLetter()
-    this.#filterOutMostCommonLetter()
+    this.#findAmountOfMostFrequentLetter()
+    this.#filterOutMostFrequentLetter()
 
-    return this.#mostCommonLetter
+    return this.#mostFrequentLetter
   }
 
   #resetPrivateFields() {
-    this.#mostCommonLetter = []
-    this.#amountOfMostCommonLetter = 0
+    this.#mostFrequentLetter = []
+    this.#amountOfMostFrequentLetter = 0
     this.#countedLetters = {}
     this.#caseSensitivity = false
   }
@@ -73,21 +73,21 @@ export class MostCommonLetterFinder {
     }
   }
 
-  #findAmountOfMostCommonLetter() {
+  #findAmountOfMostFrequentLetter() {
     for (const letter in this.#countedLetters) {
-      if (this.#countedLetters[letter] > this.#amountOfMostCommonLetter) {
-        this.#amountOfMostCommonLetter = this.#countedLetters[letter]
+      if (this.#countedLetters[letter] > this.#amountOfMostFrequentLetter) {
+        this.#amountOfMostFrequentLetter = this.#countedLetters[letter]
       }
     }
   }
 
-  #filterOutMostCommonLetter() {
+  #filterOutMostFrequentLetter() {
     for (const key in this.#countedLetters) {
-      if (this.#countedLetters[key] === this.#amountOfMostCommonLetter) {
+      if (this.#countedLetters[key] === this.#amountOfMostFrequentLetter) {
         const object = {
           [key]: this.#countedLetters[key]
         }
-        this.#mostCommonLetter.push(object)
+        this.#mostFrequentLetter.push(object)
       }
     }
   }
