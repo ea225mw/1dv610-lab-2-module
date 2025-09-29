@@ -9,12 +9,8 @@ export class PhraseCounter {
 
   countSpecifiedPhrase(string, phrase) {
     this.#helper.validateInput(string)
-    this.#checkCharArgument(phrase)
+    this.#helper.checkCharArgument(phrase)
     return this.#findSpecifiedPhrase(string, phrase)
-  }
-
-  #checkCharArgument(phrase) {
-    if (typeof phrase !== 'string') throw new Error('Second argument must be a string.')
   }
 
   #findSpecifiedPhrase(string, phrase) {

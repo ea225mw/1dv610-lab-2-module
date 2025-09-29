@@ -7,19 +7,19 @@ export class WordSorter {
     this.#helper = new Helper
   }
 
-  sortWordsDescending(string) {
-    this.#helper.validateInput(string)
-    const splittedWordsArray = this.#helper.splitOnWhitespace(string)
-    return this.#descendingOrder(splittedWordsArray)
-  }
-
   sortWordsAscending(string) {
     this.#helper.validateInput(string)
     const splittedWordsArray = this.#helper.splitOnWhitespace(string)
     return this.#ascendingOrder(splittedWordsArray)
   }
 
-  #descendingOrder(array) {
+  sortWordsDescending(string) {
+    this.#helper.validateInput(string)
+    const splittedWordsArray = this.#helper.splitOnWhitespace(string)
+    return this.#descendingOrder(splittedWordsArray)
+  }
+
+  #ascendingOrder(array) {
     return array.sort((a, b) => {
       const wordA = a.toUpperCase()
       const wordB = b.toUpperCase()
@@ -34,7 +34,7 @@ export class WordSorter {
     })
   }
 
-  #ascendingOrder(array) {
+  #descendingOrder(array) {
     return array.sort((a, b) => {
       const wordA = a.toUpperCase()
       const wordB = b.toUpperCase()

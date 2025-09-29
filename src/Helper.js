@@ -8,4 +8,8 @@ export class Helper {
   splitOnWhitespace(string) {
     return string.trim().split(/\s+/)
   }
+
+  checkCharArgument(phrase) {
+    if (typeof phrase !== 'string') throw new Error('Second argument must be a string.')
+  }
 }
