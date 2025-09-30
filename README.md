@@ -1,24 +1,26 @@
-# word-works
+# string-works
 
-## Description
+### Description
 This module is developed in a university course student project made at Linneus University, Sweden.
 
-The intended use of the module is for digging out statistics from and modify a text. The module can be seen as something that adds extra methods to the JavaScript String object. Examples: find the longest and shortest word(s), the most common letter, make all first letters of every word capital.
+The intended use of the module is for digging out statistics from and modify a string. The module can be seen as something that adds extra methods to the JavaScript String object. Examples: find the longest and shortest word(s), the most common letter, make all first letters of every word capital.
 
-## Installation
+### Installation
 
-`npm install word-works`
+`npm install string-works`
 
-## Usage 
+### Usage 
 
-`import word-works from 'word-works'`
+`import stringWorks from 'string-works'`
 
-#### Code example 1
+### Dependencies
+The string-works package has no dependencies to other external libraries.
+
+### Code example 1
 
 ```javascript
-const ww = word-works
 const str = 'The length of a name should correspond to the size of the scope.'
-const longestWord = ww.findLongestWord(str)
+const longestWord = stringWorks.findLongestWord(str)
 console.log(longestWord)
 ```
 Expected output:
@@ -26,8 +28,19 @@ Expected output:
 { numberOfLetters: 10, words: [ 'correspond' ] }
 ```
 
+### Code example 2
 
-## Module Manual
+```javascript
+const str = 'The length of a name should correspond to the size of the scope.'
+const capitalizedFirstLetters = stringWorks.makeFirstLetterCapital(str)
+console.log(capitalizedFirstLetters)
+```
+Expected output:
+```javascript
+The Length Of A Name Should Correspond To The Size Of The Scope.
+```
+
+## Package Manual
 
 To see all available methods and how to use them, take a look at [The Manual](manual.md).
 

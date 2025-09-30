@@ -1,3 +1,7 @@
+/**
+ * @author Emanuel Andersen <ea225mw@student.lnu.se>
+ */
+
 export class Helper {
   validateInput(input) {
     if (typeof input !== 'string') {
@@ -9,7 +13,7 @@ export class Helper {
     return string.trim().split(/\s+/)
   }
 
-  checkCharArgument(phrase) {
+  checkPhraseArgument(phrase) {
     if (typeof phrase !== 'string') throw new Error('Second argument must be a string.')
   }
 }

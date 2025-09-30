@@ -1,3 +1,7 @@
+/**
+ * @author Emanuel Andersen <ea225mw@student.lnu.se>
+ */
+
 import { Helper } from "./Helper.js"
 
 const obj = { 'a': 1 }
@@ -14,6 +18,13 @@ export class MostFrequentLetterFinder {
     this.#helper = new Helper
   }
 
+  /**
+   * Finds the most frequent letter in a string. 
+   * Non-case-sensitive, 'E' and 'e' are considered the same letter.
+   * 
+   * @param {string} string - The string to be examined.
+   * @returns {array} - An array with object(s) holding the most frequent letter and its amount. Example: [ { i: 57 } ]
+   */
   mostFrequentLetter(string) {
     this.#helper.validateInput(string)
     this.#resetPrivateFields()
@@ -25,6 +36,13 @@ export class MostFrequentLetterFinder {
     return this.#mostFrequentLetter
   }
 
+  /**
+   * Finds the most frequent letter in a string. 
+   * Case Sensitive, 'E' and 'e' are considered different letters.
+   * 
+   * @param {string} string - The string to be examined.
+   * @returns {array} - An array with object(s) holding the most frequent letter and its amount. Example: [ { i: 57 } ]
+   */
   mostFrequentLetterCS(string) {
     this.#helper.validateInput(string)
     this.#resetPrivateFields()

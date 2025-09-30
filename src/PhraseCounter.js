@@ -1,3 +1,7 @@
+/**
+ * @author Emanuel Andersen <ea225mw@student.lnu.se>
+ */
+
 import { Helper } from './Helper.js'
 
 export class PhraseCounter {
@@ -7,9 +11,16 @@ export class PhraseCounter {
     this.#helper = new Helper
   }
 
+  /**
+   * Counts the occurane of a specified phrase.
+   * 
+   * @param {string} string - The string in which to search for phrase.
+   * @param {string} phrase - The phrase to search for. Can be one or many letters.
+   * @returns {number} - The number of phrase occurances.
+   */
   countSpecifiedPhrase(string, phrase) {
     this.#helper.validateInput(string)
-    this.#helper.checkCharArgument(phrase)
+    this.#helper.checkPhraseArgument(phrase)
     return this.#findSpecifiedPhrase(string, phrase)
   }
 

@@ -1,3 +1,7 @@
+/**
+ * @author Emanuel Andersen <ea225mw@student.lnu.se>
+ */
+
 import { Helper } from './Helper.js'
 
 export class StringTransformer {
@@ -8,7 +12,13 @@ export class StringTransformer {
     this.#helper = new Helper
   }
 
-  firstLetterCapital(string) {
+  /**
+   * Makes all starting letters of a word capital (upper case).
+   * 
+   * @param {string} string - The string to transform.
+   * @returns {string} - The transformed string.
+   */
+  makeFirstLetterCapital(string) {
     this.#helper.validateInput(string)
     const splittedArray = this.#helper.splitOnWhitespace(string)
 

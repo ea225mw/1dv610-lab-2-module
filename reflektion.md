@@ -13,12 +13,19 @@ Min strategi för versionsnumrering fungerade inget vidare. Den gick ut på att 
 
 ### Namngivning
 
+| Namn | Förklaring | Reflektion och regler från Clean Code |
+|------|------------|---------------------------------------|
+|      |            | **Avoid disinformation:**  |
+
+
 Jag bryter mot bokens regel kring att inte ha med typbeskrivningar i variabelnamn. Exempelvis i namn som splittedWordsArray. I löst typade språk som JavaScript tycker jag att det underlättar att ibland skriva ut variablers typer i namnet så som i exemplet ovan. Annars behöver man veta att String.prototype.split() returnerar en array. Då tycker jag att förståelsen ökar genom att skriva ut typen i namnet.
 
 Bytte namn på argument i PhraseCounter från char till phrase eftersom jag gjorde om funktionen till att kunna hantera både ett tecken och en hel fras bestående av många tecken.
 
 Jag tänker mer aktivt på vad olika variabler heter efter ha läst boken och tittat på föreläsningar.
 sortedLetters --> countedLetters --> countedCharacters
+
+Ändra namn på modulen för att undvika förväxlingar med Microsoft Word.
 
 ### Kommentarer
 Jag jobbade en del med att i klartext skriva vad jag skulle koda.

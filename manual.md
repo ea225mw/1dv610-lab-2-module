@@ -1,17 +1,17 @@
-# word-works - Manual
+# string-works - The Manual
 
 ## Description
 This module is developed in a university course student project made at Linneus University, Sweden.
 
-The intended use of the module is for digging out statistics from and modify a text. The module can be seen as something that adds extra methods to the JavaScript String object. Examples: find the longest and shortest word(s), the most common letter, make all first letters of every word capital.
+The intended use of the module is for digging out statistics from and modify a string. The module can be seen as something that adds extra methods to the JavaScript String object. Examples: find the longest and shortest word(s), the most common letter, make all first letters of every word capital.
 
 ## Installation
 
-`npm install word-works`
+`npm install string-works`
 
 ## Usage 
 
-`import wordWorks from 'word-works'`
+`import stringWorks from 'string-works'`
 
 ## Available methods
 
@@ -21,9 +21,8 @@ The intended use of the module is for digging out statistics from and modify a t
 Finds the longest or shortest words in a string.
 
 ```javascript
-const ww = wordWorks
 const str = 'The length of a name should correspond to the size of the scope.'
-const longestWord = ww.findLongestWord(str)
+const longestWord = stringWorks.findLongestWord(str)
 console.log(longestWord)
 ```
 **Expected output:**
@@ -32,7 +31,7 @@ console.log(longestWord)
 ```
 
 ```javascript
-const shortestWord = ww.findShortestWord(str)
+const shortestWord = stringWorks.findShortestWord(str)
 console.log(shortestWord)
 ```
 **Expected output:**
@@ -42,15 +41,14 @@ console.log(shortestWord)
 ```
 ___
 
-### `firstLetterCapital`
+### `makeFirstLetterCapital`
 
 **Description:** <br>
 Transforms the first letter of all words in a string to capital.
 
 ```javascript
-const ww = wordWorks
 const str = 'The length of a name should correspond to the size of the scope.'
-const transformedString = ww.firstLetterCapital(str)
+const transformedString = stringWorks.makeFirstLetterCapital(str)
 console.log(transformedString)
 ```
 **Expected output:**
@@ -69,10 +67,9 @@ Counts the occurance of a specified phrase. The phrase can be a single character
 ***phrase*** - A string holding the phrase to count.
 
 ```javascript
-const ww = wordWorks
 const str = 'Lorem ipsum dolor sit amet consectetur sit adipisicing elit.'
-const countTheWordSit = ww.countSpecifiedPhrase(str, 'sit')
-const countTheLetterE = ww.countSpecifiedPhrase(str, 'e')
+const countTheWordSit = stringWorks.countSpecifiedPhrase(str, 'sit')
+const countTheLetterE = stringWorks.countSpecifiedPhrase(str, 'e')
 console.log(countTheWordSit)
 console.log(countTheLetterE)
 ```
@@ -96,10 +93,9 @@ Counts the occurance of the most frequently used letter in a string. There are t
 ***string*** - The string in which to find the most frequently used letter. <br>
 
 ```javascript
-const ww = wordWorks
 const str = 'Ipsum dolor sit amet consectetur sit adipisicing elit.'
-const mostFrequentLetter = ww.mostFrequentLetter(str)
-const mostFrequentLetterCS = ww.mostFrequentLetterCS(str)
+const mostFrequentLetter = stringWorks.mostFrequentLetter(str)
+const mostFrequentLetterCS = stringWorks.mostFrequentLetterCS(str)
 console.log(mostFrequentLetter)
 console.log(mostFrequentLetterCS)
 ```
@@ -121,10 +117,9 @@ Returns an array of all the words in a string in ascending and descending alphab
 ***string*** - The string in which to sort words alphabetically.
 
 ```javascript
-const ww = wordWorks
 const str = 'Lorem ipsum dolor sit amet consectetur sit adipisicing elit.'
-const sortAsc = ww.sortWordsAscending(str)
-const sortDesc = ww.sortWordsDescending(str)
+const sortAsc = stringWorks.sortWordsAscending(str)
+const sortDesc = stringWorks.sortWordsDescending(str)
 console.log(sortAsc)
 console.log(sortDesc)
 ```

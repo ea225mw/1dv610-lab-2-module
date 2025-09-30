@@ -1,3 +1,7 @@
+/**
+ * @author Emanuel Andersen <ea225mw@student.lnu.se>
+ */
+
 import { Helper } from "./Helper.js";
 
 export class WordSorter {
@@ -6,13 +10,24 @@ export class WordSorter {
   constructor() {
     this.#helper = new Helper
   }
-
+  /**
+   * Sorts the word in a string in alphbetical order, ascending.
+   * 
+   * @param {string} string - The string to sort.
+   * @returns {array} - An array with sorted words.
+   */
   sortWordsAscending(string) {
     this.#helper.validateInput(string)
     const splittedWordsArray = this.#helper.splitOnWhitespace(string)
     return this.#ascendingOrder(splittedWordsArray)
   }
 
+  /**
+   * Sorts the word in a string in alphbetical order, descending.
+   * 
+   * @param {string} string - The string to sort.
+   * @returns {array} - An array with sorted words.
+   */
   sortWordsDescending(string) {
     this.#helper.validateInput(string)
     const splittedWordsArray = this.#helper.splitOnWhitespace(string)

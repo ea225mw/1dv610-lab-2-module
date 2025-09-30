@@ -4,9 +4,6 @@
 
 import { Helper } from "./Helper.js"
 
-/**
- * Represents a word finder that finds the longest word in a text/string.
- */
 export class WordLengthFinder {
   #helper
 
@@ -18,6 +15,7 @@ export class WordLengthFinder {
    * Finds the longest word(s) in a string.
    * 
    * @param {string} string - The string in which to find the longest word.
+   * @returns {object} - An object specifying numberOfLetters and an array with the word(s) with that amount of letters.
    */
   findLongestWord(string) {
     const arrayOfPreparedWords = this.#prepareString(string)
@@ -33,8 +31,8 @@ export class WordLengthFinder {
   /**
    * Finds the shortest word(s) in a string.
    * 
-   * @param {string} string  - The string in which to find the shortest word.
-   * @returns 
+   * @param {string} string - The string in which to find the shortest word.
+   * @returns {object} - An object specifying numberOfLetters and an array with the word(s) with that amount of letters.
    */
   findShortestWord(string) {
     const arrayOfPreparedWords = this.#prepareString(string)
@@ -84,3 +82,10 @@ export class WordLengthFinder {
     return { numberOfLetters: set[0].length, words: Array.from(set) }
   }
 }
+
+
+/**
+ * Finds the longest word(s) in a string.
+ * 
+ * @param {string} string - The string in which to find the longest word.
+ */
