@@ -3,13 +3,13 @@
 ### Description
 This module is developed in a university course student project made at Linneus University, Sweden.
 
-The intended use of the module is for digging out statistics from and modify a string. The module can be seen as something that adds extra methods to the JavaScript String object. Examples: find the longest and shortest word(s), the most common letter, make all first letters of every word capital.
+The intended use of the module is for digging out statistics from and modify a string. The module can be seen as something that adds extra methods to the JavaScript String object. Examples: find the longest and shortest word(s) in a string, find the most common letter or make all first letters of every word capital.
 
 ### Installation
 
 `npm install string-works`
 
-### Usage 
+### Usage
 
 `import stringWorks from 'string-works'`
 
@@ -43,6 +43,9 @@ The Length Of A Name Should Correspond To The Size Of The Scope.
 ## Package Manual
 
 To see all available methods and how to use them, take a look at [The Manual](manual.md).
+
+## Contact
+Please contact me at `ea225mw [@] student.lnu.se` if you need. Let me know of bugs or features you want implemented. If you are a developer and wants to collaborate on this project you are welcome to do so. Please check out [developers guide](developer.md).
 
 ## License
 
