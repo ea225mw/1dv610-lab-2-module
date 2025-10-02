@@ -78,14 +78,7 @@ export class WordLengthFinder {
     return Array.from(set)
   }
 
-  #createReturnObject(set) {
-    return { numberOfLetters: set[0].length, words: Array.from(set) }
+  #createReturnObject(array) {
+    return { numberOfLetters: array[0].length, words: array }
   }
 }
-
-
-/**
- * Finds the longest word(s) in a string.
- * 
- * @param {string} string - The string in which to find the longest word.
- */
