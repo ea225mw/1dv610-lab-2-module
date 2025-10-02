@@ -1,8 +1,8 @@
-import { MostFrequentLetterFinder } from "./MostFrequentLetterFinder.js"
-import { PhraseCounter } from "./PhraseCounter.js"
-import { StringTransformer } from "./StringTransformer.js"
-import { WordLengthFinder } from "./WordLengthFinder.js"
-import { WordSorter } from "./WordSorter.js"
+import { MostFrequentLetterFinder } from "./src/MostFrequentLetterFinder.js"
+import { PhraseCounter } from "./src/PhraseCounter.js"
+import { StringTransformer } from "./src/StringTransformer.js"
+import { WordLengthFinder } from "./src/WordLengthFinder.js"
+import { WordSorter } from "./src/WordSorter.js"
 
 const mostFrequentLetterFinder = new MostFrequentLetterFinder
 const phraseCounter = new PhraseCounter

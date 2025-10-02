@@ -11,7 +11,7 @@ The intended use of the module is for digging out statistics from and modify a s
 
 ### Usage
 
-`import stringWorks from 'string-works'`
+`import { stringWorks } from 'string-works'`
 
 ### Dependencies
 The string-works package has no dependencies to other external libraries.
