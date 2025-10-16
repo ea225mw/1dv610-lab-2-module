@@ -18,7 +18,7 @@ export class WordLengthFinder {
    * @returns {object} - An object specifying numberOfLetters and an array with the word(s) with that amount of letters.
    */
   findLongestWord(string) {
-    const arrayOfPreparedWords = this.#helper.prepareString(string)
+    const arrayOfPreparedWords = this.#helper.validateAndPrepareString(string)
 
     const sortedArray = this.#sortArrayDescending(arrayOfPreparedWords)
     this.#deleteEmptyElements(sortedArray)
@@ -35,7 +35,7 @@ export class WordLengthFinder {
    * @returns {object} - An object specifying numberOfLetters and an array with the word(s) with that amount of letters.
    */
   findShortestWord(string) {
-    const arrayOfPreparedWords = this.#helper.prepareString(string)
+    const arrayOfPreparedWords = this.#helper.validateAndPrepareString(string)
 
     const sortedArray = this.#sortArrayAscending(arrayOfPreparedWords)
     this.#deleteEmptyElements(sortedArray)

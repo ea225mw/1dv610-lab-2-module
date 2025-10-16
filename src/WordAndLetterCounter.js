@@ -12,12 +12,12 @@ export class WordAndLetterCounter {
   }
 
   countWords(string) {
-    const splittedString = this.#helper.prepareString(string)
+    const splittedString = this.#helper.validateAndPrepareString(string)
     return splittedString.length
   }
 
   countLetters(string) {
-    const splittedString = this.#helper.prepareString(string)
+    const splittedString = this.#helper.validateAndPrepareString(string)
     let numberOfLetters = 0
     for (const word of splittedString) {
       numberOfLetters += word.length

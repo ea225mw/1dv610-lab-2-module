@@ -17,8 +17,7 @@ export class WordSorter {
    * @returns {array} - An array with sorted words.
    */
   sortWordsAscending(string) {
-    this.#helper.validateInput(string)
-    const splittedWordsArray = this.#helper.splitOnWhitespace(string)
+    const splittedWordsArray = this.#helper.validateAndPrepareString(string)
     return this.#sortInAscendingOrder(splittedWordsArray)
   }
 
@@ -29,8 +28,7 @@ export class WordSorter {
    * @returns {array} - An array with sorted words.
    */
   sortWordsDescending(string) {
-    this.#helper.validateInput(string)
-    const splittedWordsArray = this.#helper.splitOnWhitespace(string)
+    const splittedWordsArray = this.#helper.validateAndPrepareString(string)
     return this.#sortInDescendingOrder(splittedWordsArray)
   }
 

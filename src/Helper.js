@@ -17,7 +17,7 @@ export class Helper {
     if (typeof phrase !== 'string') throw new Error('Second argument must be a string.')
   }
 
-  prepareString(string) {
+  validateAndPrepareString(string) {
     this.validateInput(string)
     const cleanedString = this.#removeNonLetters(string)
     return this.splitOnWhitespace(cleanedString)
