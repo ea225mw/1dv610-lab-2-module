@@ -18,7 +18,7 @@ export class WordLengthFinder {
    * @returns {object} - An object specifying numberOfLetters and an array with the word(s) with that amount of letters.
    */
   findLongestWord(string) {
-    const arrayOfPreparedWords = this.#prepareString(string)
+    const arrayOfPreparedWords = this.#helper.prepareString(string)
 
     const sortedArray = this.#sortArrayDescending(arrayOfPreparedWords)
     this.#deleteEmptyElements(sortedArray)
@@ -35,7 +35,7 @@ export class WordLengthFinder {
    * @returns {object} - An object specifying numberOfLetters and an array with the word(s) with that amount of letters.
    */
   findShortestWord(string) {
-    const arrayOfPreparedWords = this.#prepareString(string)
+    const arrayOfPreparedWords = this.#helper.prepareString(string)
 
     const sortedArray = this.#sortArrayAscending(arrayOfPreparedWords)
     this.#deleteEmptyElements(sortedArray)
@@ -43,17 +43,6 @@ export class WordLengthFinder {
     const onlyUniqueWords = this.#createArrayWithUniqueUsefulWords(onlyShortestWordsArray)
 
     return this.#createReturnObject(onlyUniqueWords)
-  }
-
-  #prepareString(string) {
-    this.#helper.validateInput(string)
-    const cleanedString = this.#removeNonLetters(string)
-    return this.#helper.splitOnWhitespace(cleanedString)
-  }
-
-  #removeNonLetters(string) {
-    const regExp = /[\.,:;!\?\/\-\–\*\+"”`'\(\)\[\]\{\}#0123456789]/g
-    return string.replaceAll(regExp, ' ')
   }
 
   #sortArrayDescending(array) {

@@ -4,8 +4,6 @@
 
 import { Helper } from "./Helper.js"
 
-const obj = { 'a': 1 }
-
 export class MostFrequentLetterFinder {
   #helper
   #regExp = /[^\p{L}]+/gu // The negation of all characters that are considered letters by Unicode.

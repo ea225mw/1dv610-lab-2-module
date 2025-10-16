@@ -16,4 +16,15 @@ export class Helper {
   checkPhraseArgument(phrase) {
     if (typeof phrase !== 'string') throw new Error('Second argument must be a string.')
   }
+
+  prepareString(string) {
+    this.validateInput(string)
+    const cleanedString = this.#removeNonLetters(string)
+    return this.splitOnWhitespace(cleanedString)
+  }
+
+  #removeNonLetters(string) {
+    const regExp = /[\.,:;!\?\/\-\–\*\+"”`'\(\)\[\]\{\}#0123456789]/g
+    return string.replaceAll(regExp, ' ')
+  }
 }
