@@ -6,6 +6,6 @@ export const testStr3 = '## Small! (p 34) Rule number 1: Functions should be sma
 
 export const testStr4 = 'The length of a name should correspond to the size of the scope.'
 
-export const testStr5 = 'Ett Två Tre Fyra Fem Sex Sju Åtta Nio Tio'
+export const testStr5 = 'Ett Två Tre Fyra Fem Sex Sju Åtta Nio Tio & ='
 
 export const testStr6 = 'TTTKKKKLLE'

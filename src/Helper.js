@@ -24,7 +24,7 @@ export class Helper {
   }
 
   #removeNonLetters(string) {
-    const regExp = /[\.,:;!\?\/\-\–\*\+"”`'\(\)\[\]\{\}#0123456789]/g
+    const regExp = /[\.,:;!\?\/\-\–\*\+"”`'\(\)\[\]\{\}\\#0123456789%=&]/g
     return string.replaceAll(regExp, ' ')
   }
 }
