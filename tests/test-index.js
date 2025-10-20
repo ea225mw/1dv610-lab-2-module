@@ -9,5 +9,5 @@ console.log(stringWorks.makeFirstLetterCapital(testStr4))
 console.log(stringWorks.findLongestWord(testStr2))
 console.log(stringWorks.findShortestWord(testStr2))
 console.log(stringWorks.countWords(testStr2))
-console.log(stringWorks.countLetters(testStr1))
+console.log(stringWorks.countLetters('Lorem ipsum dolor sit amet consectetur sit adipisicing elit.'))
 

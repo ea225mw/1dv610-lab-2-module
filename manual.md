@@ -1,4 +1,4 @@
-# string-works - The Manual
+# string-works 0.1.3 - The Manual
 
 ## Description
 This module is developed in a university course student project made at Linneus University, Sweden.
@@ -142,3 +142,38 @@ console.log(sortDesc)
 ]
 ```
 
+### `countWords(string)`
+
+**Description:** <br>
+Counts the number of words in a string.
+
+**Parameters:** <br>
+***string*** - The string in which to count words.
+
+```javascript
+const str = 'Lorem ipsum dolor sit amet consectetur sit adipisicing elit.'
+const numberOfWords = stringWorks.countWords(str)
+console.log(numberOfWords)
+```
+**Expected output:**
+```javascript
+9
+```
+
+### `countLetters(string)`
+
+**Description:** <br>
+Counts the number of letters in a string. All non-letters are excluded in the counting.
+
+**Parameters:** <br>
+***string*** - The string in which to count letters.
+
+```javascript
+const str = 'Lorem ipsum dolor sit amet consectetur sit adipisicing elit.'
+const numberOfLetters = stringWorks.countLetters(str)
+console.log(numberOfLetters)
+```
+**Expected output:**
+```javascript
+51
+```

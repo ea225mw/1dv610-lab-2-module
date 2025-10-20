@@ -5,6 +5,10 @@ This module is developed in a university course student project made at Linneus 
 
 The intended use of the module is for digging out statistics from and modify a string. The module can be seen as something that adds extra methods to the JavaScript String object. Examples: find the longest and shortest word(s) in a string, find the most common letter or make all first letters of every word capital.
 
+### News in version 0.1.3
+- `sortWordsAscending` and `sortWordsDescending` now returns only "cleaned" words, without non-letter characters, like commas.
+- More methods added: `countWords` and `countLetters`.
+
 ### Installation
 
 `npm install string-works`
