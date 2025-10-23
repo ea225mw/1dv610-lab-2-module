@@ -19,16 +19,21 @@ export class StringTransformer {
    * @returns {string} - The transformed string.
    */
   makeFirstLetterCapital(string) {
-    this.#helper.validateInput(string)
-    const splittedArray = this.#helper.splitOnWhitespace(string)
+    try {
+      this.#helper.validateInput(string)
+      const splittedArray = this.#helper.splitOnWhitespace(string)
 
-    const transformedWords = this.#makeArrayWithTransformedWords(splittedArray)
+      const transformedWords = this.#makeArrayWithTransformedWords(splittedArray)
 
-    return this.#makeTransformedString(transformedWords)
+      return this.#makeTransformedString(transformedWords)
+    } catch (error) {
+      return error
+    }
   }
 
   #makeArrayWithTransformedWords(array) {
     return array.map(word => this.#capitalizeFirstLetter(word))
+
   }
 
   #capitalizeFirstLetter(word) {

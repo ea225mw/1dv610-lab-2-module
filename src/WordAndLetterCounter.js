@@ -11,17 +11,37 @@ export class WordAndLetterCounter {
     this.#helper = new Helper
   }
 
+  /**
+   * Counts the number of words in a string.
+   * 
+   * @param {string} string  - The string in which to count words.
+   * @returns {number} 
+   */
   countWords(string) {
-    const splittedString = this.#helper.validateAndPrepareString(string)
-    return splittedString.length
+    try {
+      const splittedString = this.#helper.validateAndPrepareString(string)
+      return splittedString.length
+    } catch (error) {
+      return error
+    }
   }
 
+  /**
+   * Counts the number of letters in a string.
+   * 
+   * @param {string} string  - The string in which to count letters.
+   * @returns {number} 
+   */
   countLetters(string) {
-    const splittedString = this.#helper.validateAndPrepareString(string)
-    let numberOfLetters = 0
-    for (const word of splittedString) {
-      numberOfLetters += word.length
+    try {
+      const splittedString = this.#helper.validateAndPrepareString(string)
+      let numberOfLetters = 0
+      for (const word of splittedString) {
+        numberOfLetters += word.length
+      }
+      return numberOfLetters
+    } catch (error) {
+      return error
     }
-    return numberOfLetters
   }
 }

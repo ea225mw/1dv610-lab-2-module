@@ -17,8 +17,12 @@ export class WordSorter {
    * @returns {array} - An array with sorted words.
    */
   sortWordsAscending(string) {
-    const splittedWordsArray = this.#helper.validateAndPrepareString(string)
-    return this.#sortInAscendingOrder(splittedWordsArray)
+    try {
+      const splittedWordsArray = this.#helper.validateAndPrepareString(string)
+      return this.#sortInAscendingOrder(splittedWordsArray)
+    } catch (error) {
+      return error
+    }
   }
 
   /**
@@ -28,8 +32,12 @@ export class WordSorter {
    * @returns {array} - An array with sorted words.
    */
   sortWordsDescending(string) {
-    const splittedWordsArray = this.#helper.validateAndPrepareString(string)
-    return this.#sortInDescendingOrder(splittedWordsArray)
+    try {
+      const splittedWordsArray = this.#helper.validateAndPrepareString(string)
+      return this.#sortInDescendingOrder(splittedWordsArray)
+    } catch (error) {
+      return error
+    }
   }
 
   #sortInAscendingOrder(array) {
@@ -37,13 +45,9 @@ export class WordSorter {
       const wordA = a.toUpperCase()
       const wordB = b.toUpperCase()
 
-      if (wordA < wordB) {
-        return -1
-      }
-      if (wordA > wordB) {
-        return 1
-      }
-      return 0
+      if (wordA < wordB) return -1
+      if (wordA > wordB) return 1
+      else return 0
     })
   }
 
@@ -52,13 +56,9 @@ export class WordSorter {
       const wordA = a.toUpperCase()
       const wordB = b.toUpperCase()
 
-      if (wordA < wordB) {
-        return 1
-      }
-      if (wordA > wordB) {
-        return -1
-      }
-      return 0
+      if (wordA < wordB) return 1
+      if (wordA > wordB) return -1
+      else return 0
     })
   }
 }

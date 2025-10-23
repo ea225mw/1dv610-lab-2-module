@@ -18,14 +18,18 @@ export class WordLengthFinder {
    * @returns {object} - An object specifying numberOfLetters and an array with the word(s) with that amount of letters.
    */
   findLongestWord(string) {
-    const arrayOfPreparedWords = this.#helper.validateAndPrepareString(string)
+    try {
+      const arrayOfPreparedWords = this.#helper.validateAndPrepareString(string)
 
-    const sortedArray = this.#sortArrayDescending(arrayOfPreparedWords)
-    this.#deleteEmptyElements(sortedArray)
-    const onlyLongestWordsArray = this.#keepOnlyUsefulWords(sortedArray)
-    const onlyUniqueWords = this.#createArrayWithUniqueUsefulWords(onlyLongestWordsArray)
+      const sortedArray = this.#sortArrayDescending(arrayOfPreparedWords)
+      this.#deleteEmptyElements(sortedArray)
+      const onlyLongestWordsArray = this.#keepOnlyUsefulWords(sortedArray)
+      const onlyUniqueWords = this.#createArrayWithUniqueUsefulWords(onlyLongestWordsArray)
 
-    return this.#createReturnObject(onlyUniqueWords)
+      return this.#createReturnObject(onlyUniqueWords)
+    } catch (error) {
+      return error
+    }
   }
 
   /**
@@ -35,14 +39,18 @@ export class WordLengthFinder {
    * @returns {object} - An object specifying numberOfLetters and an array with the word(s) with that amount of letters.
    */
   findShortestWord(string) {
-    const arrayOfPreparedWords = this.#helper.validateAndPrepareString(string)
+    try {
+      const arrayOfPreparedWords = this.#helper.validateAndPrepareString(string)
 
-    const sortedArray = this.#sortArrayAscending(arrayOfPreparedWords)
-    this.#deleteEmptyElements(sortedArray)
-    const onlyShortestWordsArray = this.#keepOnlyUsefulWords(sortedArray)
-    const onlyUniqueWords = this.#createArrayWithUniqueUsefulWords(onlyShortestWordsArray)
+      const sortedArray = this.#sortArrayAscending(arrayOfPreparedWords)
+      this.#deleteEmptyElements(sortedArray)
+      const onlyShortestWordsArray = this.#keepOnlyUsefulWords(sortedArray)
+      const onlyUniqueWords = this.#createArrayWithUniqueUsefulWords(onlyShortestWordsArray)
 
-    return this.#createReturnObject(onlyUniqueWords)
+      return this.#createReturnObject(onlyUniqueWords)
+    } catch (error) {
+      return error
+    }
   }
 
   #sortArrayDescending(array) {

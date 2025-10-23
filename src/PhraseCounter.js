@@ -19,9 +19,13 @@ export class PhraseCounter {
    * @returns {number} - The number of phrase occurances.
    */
   countSpecifiedPhrase(string, phrase) {
-    this.#helper.validateInput(string)
-    this.#helper.checkPhraseArgument(phrase)
-    return this.#findSpecifiedPhrase(string, phrase)
+    try {
+      this.#helper.validateInput(string)
+      this.#helper.checkPhraseArgument(phrase)
+      return this.#findSpecifiedPhrase(string, phrase)
+    } catch (error) {
+      return error
+    }
   }
 
   #findSpecifiedPhrase(string, phrase) {

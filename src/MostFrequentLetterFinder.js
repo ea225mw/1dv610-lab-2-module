@@ -24,14 +24,18 @@ export class MostFrequentLetterFinder {
    * @returns {array} - An array with object(s) holding the most frequent letter and its amount. Example: [ { i: 57 } ]
    */
   mostFrequentLetter(string) {
-    this.#helper.validateInput(string)
-    this.#resetPrivateFields()
+    try {
+      this.#helper.validateInput(string)
+      this.#resetPrivateFields()
 
-    this.#countEachLetter(string)
-    this.#findAmountOfMostFrequentLetter()
-    this.#filterOutMostFrequentLetter()
+      this.#countEachLetter(string)
+      this.#findAmountOfMostFrequentLetter()
+      this.#filterOutMostFrequentLetter()
 
-    return this.#mostFrequentLetter
+      return this.#mostFrequentLetter
+    } catch (error) {
+      return error
+    }
   }
 
   /**
@@ -42,15 +46,19 @@ export class MostFrequentLetterFinder {
    * @returns {array} - An array with object(s) holding the most frequent letter and its amount. Example: [ { i: 57 } ]
    */
   mostFrequentLetterCS(string) {
-    this.#helper.validateInput(string)
-    this.#resetPrivateFields()
-    this.#caseSensitivity = true
+    try {
+      this.#helper.validateInput(string)
+      this.#resetPrivateFields()
+      this.#caseSensitivity = true
 
-    this.#countEachLetter(string)
-    this.#findAmountOfMostFrequentLetter()
-    this.#filterOutMostFrequentLetter()
+      this.#countEachLetter(string)
+      this.#findAmountOfMostFrequentLetter()
+      this.#filterOutMostFrequentLetter()
 
-    return this.#mostFrequentLetter
+      return this.#mostFrequentLetter
+    } catch (error) {
+      return error
+    }
   }
 
   #resetPrivateFields() {

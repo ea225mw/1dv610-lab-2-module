@@ -1,6 +1,6 @@
 {
   "name": "string-works",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "The intended use of the module is for digging out statistics from and modify a string. The module can be seen as something that adds extra methods to the JavaScript String object. Examples: find the longest and shortest word(s) in a string, find the most common letter or make all first letters of every word capital.",
   "type": "module",
   "main": "index.js",
