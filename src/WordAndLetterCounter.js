@@ -2,46 +2,49 @@
  * @author Emanuel Andersen <ea225mw@student.lnu.se>
  */
 
-import { Helper } from './Helper.js'
+import { Helper } from "./Helper.js";
 
 export class WordAndLetterCounter {
-  #helper
+  #helper;
 
   constructor() {
-    this.#helper = new Helper
+    this.#helper = new Helper();
   }
 
   /**
    * Counts the number of words in a string.
-   * 
+   *
    * @param {string} string  - The string in which to count words.
-   * @returns {number} 
+   * @returns {number}
    */
   countWords(string) {
     try {
-      const splittedString = this.#helper.validateAndPrepareString(string)
-      return splittedString.length
+      if (string === "") return 0;
+      else {
+        const splittedString = this.#helper.validateAndPrepareString(string);
+        return splittedString.length;
+      }
     } catch (error) {
-      return error
+      return error;
     }
   }
 
   /**
    * Counts the number of letters in a string.
-   * 
+   *
    * @param {string} string  - The string in which to count letters.
-   * @returns {number} 
+   * @returns {number}
    */
   countLetters(string) {
     try {
-      const splittedString = this.#helper.validateAndPrepareString(string)
-      let numberOfLetters = 0
+      const splittedString = this.#helper.validateAndPrepareString(string);
+      let numberOfLetters = 0;
       for (const word of splittedString) {
-        numberOfLetters += word.length
+        numberOfLetters += word.length;
       }
-      return numberOfLetters
+      return numberOfLetters;
     } catch (error) {
-      return error
+      return error;
     }
   }
 }

@@ -4,27 +4,27 @@
 
 export class Helper {
   validateAndPrepareString(string) {
-    this.validateInput(string)
-    const cleanedString = this.#removeNonLetters(string)
-    return this.splitOnWhitespace(cleanedString)
+    this.validateInput(string);
+    const cleanedString = this.#removeNonLetters(string);
+    return this.splitOnWhitespace(cleanedString);
   }
 
   validateInput(input) {
-    if (typeof input !== 'string') {
-      throw new Error('Input must be a string.')
+    if (typeof input !== "string") {
+      throw new Error("Input must be a string.");
     }
   }
 
   #removeNonLetters(string) {
-    const regExp = /[\.,:;!\?\/\-\–\*\+"”`'\(\)\[\]\{\}\\#0123456789%=&]/g
-    return string.replaceAll(regExp, ' ')
+    return string.replaceAll(/[^a-zA-ZåäöÅÄÖ\s]/g, " ");
   }
 
   splitOnWhitespace(string) {
-    return string.trim().split(/\s+/)
+    return string.trim().split(/\s+/);
   }
 
   checkPhraseArgument(phrase) {
-    if (typeof phrase !== 'string') throw new Error('Second argument must be a string.')
+    if (typeof phrase !== "string")
+      throw new Error("Second argument must be a string.");
   }
 }
