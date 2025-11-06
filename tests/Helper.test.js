@@ -1,11 +1,10 @@
-import { Helper } from '../src/Helper.js'
+import {Helper} from '../src/Helper.js'
 
-const helper = new Helper
+const helper = new Helper()
+const splittedString = ['Functions', 'should', 'do', 'one', 'thing']
 
 test('split on whitespaces', () => {
-  expect(
-    helper.splitOnWhitespace('Functions should do one thing')
-  ).toStrictEqual(['Functions', 'should', 'do', 'one', 'thing'])
+  expect(helper.splitOnWhitespace('Functions should do one thing')).toStrictEqual(splittedString)
 })
 
 test('recieve an error message when input is wrong type', () => {
