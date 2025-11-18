@@ -1,7 +1,10 @@
 import {WordSorter} from '../src/WordSorter.js'
 import {testStr5} from './testStrings.js'
+import {Helper} from '../src/Helper.js'
 
-const wordSorter = new WordSorter()
+const helper = new Helper()
+
+const wordSorter = new WordSorter(helper)
 const expectedAscending = ['Ett', 'Fem', 'Fyra', 'Nio', 'Sex', 'Sju', 'Tio', 'Tre', 'Två', 'Åtta']
 const expectedDescending = ['Åtta', 'Två', 'Tre', 'Tio', 'Sju', 'Sex', 'Nio', 'Fyra', 'Fem', 'Ett']
 

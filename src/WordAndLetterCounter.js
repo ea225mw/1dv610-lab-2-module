@@ -2,13 +2,11 @@
  * @author Emanuel Andersen <ea225mw@student.lnu.se>
  */
 
-import { Helper } from "./Helper.js";
-
 export class WordAndLetterCounter {
-  #helper;
+  #helper
 
-  constructor() {
-    this.#helper = new Helper();
+  constructor(helper) {
+    this.#helper = helper
   }
 
   /**
@@ -19,13 +17,13 @@ export class WordAndLetterCounter {
    */
   countWords(string) {
     try {
-      if (string === "") return 0;
+      if (string === '') return 0
       else {
-        const splittedString = this.#helper.validateAndPrepareString(string);
-        return splittedString.length;
+        const splittedString = this.#helper.validateAndPrepareString(string)
+        return splittedString.length
       }
     } catch (error) {
-      return error;
+      return error
     }
   }
 
@@ -37,14 +35,14 @@ export class WordAndLetterCounter {
    */
   countLetters(string) {
     try {
-      const splittedString = this.#helper.validateAndPrepareString(string);
-      let numberOfLetters = 0;
+      const splittedString = this.#helper.validateAndPrepareString(string)
+      let numberOfLetters = 0
       for (const word of splittedString) {
-        numberOfLetters += word.length;
+        numberOfLetters += word.length
       }
-      return numberOfLetters;
+      return numberOfLetters
     } catch (error) {
-      return error;
+      return error
     }
   }
 }

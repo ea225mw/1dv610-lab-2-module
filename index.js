@@ -1,16 +1,18 @@
-import { MostFrequentLetterFinder } from "./src/MostFrequentLetterFinder.js"
-import { PhraseCounter } from "./src/PhraseCounter.js"
-import { StringTransformer } from "./src/StringTransformer.js"
-import { WordLengthFinder } from "./src/WordLengthFinder.js"
-import { WordSorter } from "./src/WordSorter.js"
-import { WordAndLetterCounter } from "./src/WordAndLetterCounter.js"
+import {Helper} from './src/Helper.js'
+import {MostFrequentLetterFinder} from './src/MostFrequentLetterFinder.js'
+import {PhraseCounter} from './src/PhraseCounter.js'
+import {StringTransformer} from './src/StringTransformer.js'
+import {WordLengthFinder} from './src/WordLengthFinder.js'
+import {WordSorter} from './src/WordSorter.js'
+import {WordAndLetterCounter} from './src/WordAndLetterCounter.js'
 
-const mostFrequentLetterFinder = new MostFrequentLetterFinder
-const phraseCounter = new PhraseCounter
-const stringTransformer = new StringTransformer
-const wordLengthFinder = new WordLengthFinder
-const wordSorter = new WordSorter
-const wordAndLetterCounter = new WordAndLetterCounter
+const helper = new Helper()
+const mostFrequentLetterFinder = new MostFrequentLetterFinder(helper)
+const phraseCounter = new PhraseCounter(helper)
+const stringTransformer = new StringTransformer(helper)
+const wordLengthFinder = new WordLengthFinder(helper)
+const wordSorter = new WordSorter(helper)
+const wordAndLetterCounter = new WordAndLetterCounter(helper)
 
 export const stringWorks = {
   mostFrequentLetter: (string) => mostFrequentLetterFinder.mostFrequentLetter(string),
@@ -22,5 +24,5 @@ export const stringWorks = {
   sortWordsAscending: (string) => wordSorter.sortWordsAscending(string),
   sortWordsDescending: (string) => wordSorter.sortWordsDescending(string),
   countWords: (string) => wordAndLetterCounter.countWords(string),
-  countLetters: (string) => wordAndLetterCounter.countLetters(string)
+  countLetters: (string) => wordAndLetterCounter.countLetters(string),
 }

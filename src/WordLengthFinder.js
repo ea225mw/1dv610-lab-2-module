@@ -2,18 +2,16 @@
  * @author Emanuel Andersen <ea225mw@student.lnu.se>
  */
 
-import { Helper } from "./Helper.js"
-
 export class WordLengthFinder {
   #helper
 
-  constructor() {
-    this.#helper = new Helper
+  constructor(helper) {
+    this.#helper = helper
   }
 
   /**
    * Finds the longest word(s) in a string.
-   * 
+   *
    * @param {string} string - The string in which to find the longest word.
    * @returns {object} - An object specifying numberOfLetters and an array with the word(s) with that amount of letters.
    */
@@ -34,7 +32,7 @@ export class WordLengthFinder {
 
   /**
    * Finds the shortest word(s) in a string.
-   * 
+   *
    * @param {string} string - The string in which to find the shortest word.
    * @returns {object} - An object specifying numberOfLetters and an array with the word(s) with that amount of letters.
    */
@@ -70,12 +68,12 @@ export class WordLengthFinder {
   }
 
   #createArrayWithUniqueUsefulWords(array) {
-    const set = new Set
+    const set = new Set()
     array.forEach((element) => set.add(element.toLowerCase()))
     return Array.from(set)
   }
 
   #createReturnObject(array) {
-    return { numberOfLetters: array[0].length, words: array }
+    return {numberOfLetters: array[0].length, words: array}
   }
 }

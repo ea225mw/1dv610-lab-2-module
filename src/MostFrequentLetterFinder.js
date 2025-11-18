@@ -2,8 +2,6 @@
  * @author Emanuel Andersen <ea225mw@student.lnu.se>
  */
 
-import { Helper } from "./Helper.js"
-
 export class MostFrequentLetterFinder {
   #helper
   #regExp = /[^\p{L}]+/gu // The negation of all characters that are considered letters by Unicode.
@@ -12,14 +10,14 @@ export class MostFrequentLetterFinder {
   #mostFrequentLetter = []
   #caseSensitivity = false
 
-  constructor() {
-    this.#helper = new Helper
+  constructor(helper) {
+    this.#helper = helper
   }
 
   /**
-   * Finds the most frequent letter in a string. 
+   * Finds the most frequent letter in a string.
    * Non-case-sensitive, 'E' and 'e' are considered the same letter.
-   * 
+   *
    * @param {string} string - The string to be examined.
    * @returns {array} - An array with object(s) holding the most frequent letter and its amount. Example: [ { i: 57 } ]
    */
@@ -39,9 +37,9 @@ export class MostFrequentLetterFinder {
   }
 
   /**
-   * Finds the most frequent letter in a string. 
+   * Finds the most frequent letter in a string.
    * Case Sensitive, 'E' and 'e' are considered different letters.
-   * 
+   *
    * @param {string} string - The string to be examined.
    * @returns {array} - An array with object(s) holding the most frequent letter and its amount. Example: [ { i: 57 } ]
    */
@@ -109,7 +107,7 @@ export class MostFrequentLetterFinder {
     for (const key in this.#countedLetters) {
       if (this.#countedLetters[key] === this.#amountOfMostFrequentLetter) {
         const object = {
-          [key]: this.#countedLetters[key]
+          [key]: this.#countedLetters[key],
         }
         this.#mostFrequentLetter.push(object)
       }

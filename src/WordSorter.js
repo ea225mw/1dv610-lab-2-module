@@ -2,17 +2,15 @@
  * @author Emanuel Andersen <ea225mw@student.lnu.se>
  */
 
-import { Helper } from "./Helper.js";
-
 export class WordSorter {
   #helper
 
-  constructor() {
-    this.#helper = new Helper
+  constructor(helper) {
+    this.#helper = helper
   }
   /**
    * Sorts the word in a string in alphbetical order, ascending.
-   * 
+   *
    * @param {string} string - The string to sort.
    * @returns {array} - An array with sorted words.
    */
@@ -27,7 +25,7 @@ export class WordSorter {
 
   /**
    * Sorts the word in a string in alphbetical order, descending.
-   * 
+   *
    * @param {string} string - The string to sort.
    * @returns {array} - An array with sorted words.
    */

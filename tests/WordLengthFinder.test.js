@@ -1,7 +1,9 @@
 import {testStr1, testStr2, testStr3} from './testStrings.js'
-
 import {WordLengthFinder} from '../src/WordLengthFinder.js'
-const wordLengthFinder = new WordLengthFinder()
+import {Helper} from '../src/Helper.js'
+
+const helper = new Helper()
+const wordLengthFinder = new WordLengthFinder(helper)
 
 test('find longest word in test strings', () => {
   expect(wordLengthFinder.findLongestWord(testStr1)).toStrictEqual({
