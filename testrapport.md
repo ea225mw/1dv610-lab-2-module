@@ -14,7 +14,7 @@ Tester har genomförts på alla publika metoder på två sätt. Dels genom autom
 
 `npm test`
 
-<img src="./testrapport_images/npmTest_01.png" style="width: 750px;">
+<img src="./testrapport_images/npmTest_01.png">
 
 ### Manuell testning
 
